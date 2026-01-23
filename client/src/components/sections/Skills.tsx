@@ -3,46 +3,55 @@ import { RESUME_DATA } from "@/lib/data";
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 bg-[#0a0a0a] relative overflow-hidden">
-      {/* Decorative blurred blob */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="skills" className="py-32 bg-[#050505] relative overflow-hidden">
+      {/* Grid Pattern Background */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]">
+        <div className="h-full w-full bg-[size:20px_20px] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)]" />
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-24 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-4">
-            Technical Arsenal
-          </h2>
-          <div className="h-1 w-20 bg-primary mx-auto rounded-full" />
+          <h2 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">Expertise Stack</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">A collection of tools and technologies I've mastered to build scalable AI systems.</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
           {Object.entries(RESUME_DATA.skills).map(([category, items], index) => (
             <motion.div
               key={category}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-primary/50 transition-all group"
+              className="relative"
             >
-              <h3 className="text-xl font-heading font-bold text-primary capitalize mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary" />
-                {category}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {items.map((skill) => (
-                  <span
+              <div className="flex items-center gap-4 mb-8">
+                <span className="text-5xl font-bold text-white/5 font-heading absolute -top-10 -left-4 select-none">0{index + 1}</span>
+                <h3 className="text-2xl font-heading font-bold text-white capitalize relative z-10 pl-2 border-l-2 border-primary">
+                  {category}
+                </h3>
+              </div>
+              
+              <div className="flex flex-wrap gap-4">
+                {items.map((skill, sIdx) => (
+                  <motion.div
                     key={skill}
-                    className="px-3 py-1.5 bg-white/5 border border-white/5 rounded-lg text-sm text-muted-foreground group-hover:text-white transition-colors"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: (index * 0.1) + (sIdx * 0.05) }}
+                    className="group relative"
                   >
-                    {skill}
-                  </span>
+                    <div className="px-5 py-2.5 bg-white/[0.03] border border-white/10 rounded-full text-muted-foreground hover:text-white hover:bg-primary/20 hover:border-primary/50 transition-all duration-300 cursor-default flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
+                      {skill}
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
