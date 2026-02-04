@@ -6,16 +6,29 @@ export const RESUME_DATA = {
   email: "bodakayash@gmail.com",
   phone: "+91-8866476540",
   location: "Ahmedabad, India",
+  resumeUrl: "/resume.pdf",
   summary: "AI and Backend Engineer focused on building AI-powered solutions and intelligent workflows. Experienced in designing LLM-driven applications, RAG pipelines, and automation workflows. Skilled in translating AI models into production-ready services and analytics-driven systems deployed across cloud environments.",
+  about: {
+    content: `I'm passionate about building intelligent systems that bridge the gap between cutting-edge AI research and real-world applications. My journey in software engineering has been driven by curiosity and a desire to solve complex problems through elegant code.
+
+With experience spanning AI development, backend engineering, and MLOps, I thrive in environments where innovation meets practicality. I believe in writing clean, maintainable code and creating systems that scale. When I'm not coding, you'll find me exploring new AI research papers, contributing to open-source projects, or mentoring aspiring developers.`,
+    highlights: [
+      "AI & ML Enthusiast",
+      "Backend Developer",
+      "Python Specialist",
+      "Problem Solver",
+      "Continuous Learner"
+    ]
+  },
   socials: [
     {
       name: "LinkedIn",
-      url: "#",
+      url: "https://www.linkedin.com/in/yash-bodaka/",
       icon: Linkedin
     },
     {
       name: "GitHub",
-      url: "#", 
+      url: "https://github.com/yashbodaka/", 
       icon: Github
     },
     {
@@ -49,24 +62,36 @@ export const RESUME_DATA = {
       company: "Express Travels",
       role: "Software Developer", 
       period: "Jun 2024 – Apr 2025",
-      description: "Designed and optimized Python and SQL-based backend systems. Built automated ETL pipelines and forecasting models. Developed orchestration and alerting workflows, reducing manual processes by 60%."
+      description: "Designed and optimized Python and SQL-based backend systems and APIs. Built automated ETL/data pipelines and deployed forecasting models into production microservices. Implemented workflow orchestration, monitoring, and alerting, reducing manual operational processes by 60%."
     }
   ],
   projects: [
     {
+      title: "Unveiling the Mind: Stress Detection Survey",
+      tags: ["Research Paper", "ML/DL", "Stress Detection"],
+      description: "A comprehensive review of ML/DL approaches for stress detection, analyzing physiological data, behavioral cues, and model interpretability challenges.",
+      link: "https://www.ijsrtjournal.com/article/Unveiling+the+Mind+A+Survey+on+Stress+Detection+Using+Machine+Learning+and+Deep+Learning+Techniques",
+      type: "paper"
+    },
+    {
       title: "Documentation Chatbot",
       tags: ["LLM", "Agentic Routing"],
-      description: "LLM-based system using hierarchical, non-embedding retrieval with agent-based routing for accurate context."
+      description: "LLM-based system using hierarchical, non-embedding retrieval with agent-based routing for accurate context.",
+      link: "https://github.com/yashbodaka/Motadata_Chatbot",
+      video: "/motadata_chatbot.mp4"
     },
     {
       title: "RAG Tool Selector",
       tags: ["Dynamic RAG", "Tool Use"],
-      description: "Adaptive tool-selection pipeline enabling dynamic RAG across a large tool ecosystem."
+      description: "Adaptive tool-selection pipeline enabling dynamic RAG across a large tool ecosystem.",
+      link: "https://github.com/yashbodaka/Agno_Rag_Tool",
+      video: "/Agno_rag.mp4"
     },
     {
-      title: "Graph RAG Implementation",
-      tags: ["Graph DB", "Entity Modeling"],
-      description: "Designed and implemented a graph-based RAG system leveraging entity–relationship modeling."
+      title: "Code Review Bot",
+      tags: ["Gemini", "GitHub Actions", "Automation"],
+      description: "Automated code review bot using Google Gemini to detect security vulnerabilities, bugs, and best practice violations in PRs.",
+      link: "https://github.com/yashbodaka/code_review_bot"
     }
   ],
   skills: {

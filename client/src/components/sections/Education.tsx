@@ -10,10 +10,10 @@ export function Education() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-[#F2F2F2] mb-4">
             Education
           </h2>
           <div className="h-1 w-20 bg-primary rounded-full" />
@@ -25,16 +25,16 @@ export function Education() {
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="glass border-white/5 h-full flex flex-col justify-center">
+              <Card className="glass border-[#F2F2F2]/5 h-full flex flex-col justify-center">
                 <CardHeader className="flex flex-row items-start gap-4 space-y-0">
                   <div className="p-3 bg-primary/10 rounded-lg text-primary">
                     <GraduationCap size={32} />
                   </div>
                   <div>
-                    <CardTitle className="text-xl text-white font-heading">
+                    <CardTitle className="text-xl text-[#F2F2F2] font-heading">
                       {edu.school}
                     </CardTitle>
                     <CardDescription className="text-lg text-primary mt-1">
